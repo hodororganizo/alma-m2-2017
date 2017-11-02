@@ -23,9 +23,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-    </properties>
-<properties>
-<docker.image.prefix>hodororganizo</docker.image.prefix>
+	<docker.image.prefix>hodororganizo</docker.image.prefix>
     </properties>
 
   <build>
