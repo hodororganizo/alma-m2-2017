@@ -2,4 +2,9 @@ language: java
 jdk: oraclejdk8
 
 script:
+<<<<<<< HEAD
   - mvn clean verify -f alma-server/pom.xml -e
+=======
+  - cd alma-server/
+  - mvn clean verify -e
+>>>>>>> adding support for Travis-CI the file .travis.yml
