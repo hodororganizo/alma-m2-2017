@@ -24,7 +24,7 @@ after_success:
 deploy:
   provider: releases
   api_key: "GITHUB OAUTH TOKEN"
-  file: "FILE TO UPLOAD "
+  file: "FILE TO UPLOAD"
   overwrite: true
   skip_cleanup: true
   on:
