@@ -16,11 +16,9 @@ after_success:
 - docker images
 - docker push hodororganizo/alma-server:latest
 
-
 deploy:
   provider: releases
-  api_key:
-    secure: ZoXm0DwbhoUgPiVY5rCVXAw8ycux5UxvrApanx5P11BXxcX6n9gmAHbCVtAUO1R3/VsOeYiu2iuwlhAUy09QL49nvBAye324O2qI2Y4Clm+KhlKew88ijKHnJzvVCjWyeqItpvi8ldwrukKjxbgUN+G6CjZLjUlQnP8m2Yg8Iv1wMnsC1CopMdjcsCOVUvK4+HQiqz0bEoPCFLtDX0FVvT3ObI1+mrT+1D9nGx1fbvE/pvJwsN9+vVW+gjcZo+7U8zeksj3TEnmLy5MfFfU0IrkhOBdehVMeTzouOghO463S9vdrEAGk2ZV28ZUP+anRRTaJoZOIB+lkKd+FZ8A5BXTekyHwTMEZLvggTTXozjxLipRN3f/FkHLhb8c8mKKYJpd4s+hAMzHSOryW+Hzgtal0gvaOGHi1ENm4j7ryzrrOONOZrwCgfwPaoWB5nJ8tieF1/iYiD52N4Nsiy89c9l4lWOz/HoTPnHoq3kJEFIgAUMw+1ii+Q9/ptQY9tfqa9wPjNea9pQp2p8Ha7d5V+Sghd0ymcrjCpAbIf1vZhszaBzCNLb9tFBr5e+2NJ1Q90m2suCJ0qLcsWVUP9sm8Cdm3zzfDlCAEVE4sTZj84KOictz5Pjih15KT3pKTk1R+Ro2xLPmoOXWycabhSwy3XbrGjMhmMUW/ustFxMeZ6EM=
-  file: alma-server/target/alma-server-1.0.0-SNAPSHOT.jar
+  api_key: $API_KEY
+  name: Build Travis $(date +'%d.%m.%Y %R')
   on:
     repo: hodororganizo/alma-m2-2017
