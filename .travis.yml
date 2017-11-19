@@ -30,3 +30,4 @@ deploy:
   file: alma-server/target/alma-server-1.0.0-SNAPSHOT.jar
   on:
     repo: hodororganizo/alma-m2-2017
+    tags: true
