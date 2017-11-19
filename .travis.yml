@@ -19,6 +19,7 @@ script:
 - gulp minify
 - cd ../../../../
 - mvn clean verify -f alma-server/pom.xml -e
+- make dist
 after_success:
 - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
 - docker images
@@ -27,8 +28,10 @@ deploy:
   provider: releases
   api_key:
     secure: Ny15QZmD9HgauLx73BzLpQMj7s6E2KRKMSqMZZz6iFpMu6Z3QeBltQrhpnPAdtbiYrtffe3JwtR/VCKZyUa7OQoPfw46zzqYLKW6Wq6azrVsH8zLST1/ELEm5sxILLi3vsGC6SPVswZ2Y6mesiegdnOFqRxL52SLCD9P9Gjc5KWzxh/9JGM4DI+X5Kv4+z8P+znJaKAB/Xv8NrMHLG0PI1IEVW4I2jSzoSIOhxqpgmErbBB+o+oRi/Si2/MoA0sKZXKRKmB6VmWiaNQuMYFTWmVQRLGXxKiGJu0hPE2bejUuGvCCpdutSCmlNsWrm4hBNlnUkP3dhgl9TW/L9Qx5rZwWW7TwwDufLRcXhqLccahgTpvBZVaUxlTvrn9nea4agKMW2lSbzzzidM/DsqCVGGhwp2bdg+DdpzsdvtZcqxPlH6wtCmiUhnHk0kzPZTES/sgfKH7f6aHwSS6IqcX2aiWeF3QMlQhGbju7qJKQLsLDOJRKlxqi2YW77fCXKww9JC9ZQdLdPFmUj7DAtECVJzZgEz4tTt0V7Wy3wrAMl+yNG/7b/00cX1HJRNTq4NFLlMY5mZGwB68DTb5k3vGsIEuWRitn9Jh7nHBoFPGhZKpvNjH7FizrGOgAC/JWF7Pi704C+3ZS6pLTsZLrTiU4onuKjBlYi+5YAei1c/PDlns=
-  file: alma-server/target/alma-server-1.0.0-SNAPSHOT.jar
+  file: release.zip
   on:
     repo: hodororganizo/alma-m2-2017
     tags: true
-
+env:
+  global:
+    secure: NuqyH/wcvAHM5cExJGZ5ozygUKGSPwVsa5RKjU3kzeoyKBXYHNGV0yNnQ4sJZCx2LmdOyKbSF0VPT50vxFEYlS27DBbvmOdHAwxCojALFhhQR6Ag7kJaMOakriVnggm3fBZvLUl222NwDcPD416aLrGd/fGq7yRtaMxqrbRoE6oBfg9qTcBsg0V5lDE16hvlXz4D5S8eV8i4SV2j5Sj+Jywam5Ell5xhRnkLThvMASNRos0KijMWf462zjrMMexElt4PLSocLrmcBsbT9Sy+m2WabmXJOqtvx4yRVuNTHGx9Nuo9As08j0W2Zw+/E4DeyUjb+wOga4DS+cUopdHpS3BrVYlavcUzIUsW7CG1ZDkR1k+afOX7QM+OGkOiPbtwPAOX31X2gXcHoReQHAikOJpv2ysWPXM9j0o+S5/OUmnnhDakp/dH9ul1tEgHOcFuXXYtjGSd7qeyFPrVVIo447LZ17qPpo6NimXINXRH3Ajk8Xkccx5aRxJHg8pUu7iDeuhU8IF2oh+KWY+9DVjBpZ7WZkHVUy8UUcG/VbzfK2GjdCUAhIDDLVUxvQNBbAdDuWBcxAhhIj7+Ndz/bqJc2xoZhiJutc+hMO5dkWd83meo7q6VMglNCPttMmzH3W+iH2CAh02k2fFRmmAcXqPrFSqgAb1DK6o6YYJSfeGuwow=
